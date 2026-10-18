@@ -2,7 +2,6 @@
 CREATE TABLE IF NOT EXISTS students (
   id_hash TEXT PRIMARY KEY NOT NULL,
   student_name TEXT NOT NULL,
-  grade INTEGER NOT NULL CHECK (grade BETWEEN 0 AND 100),
   status TEXT NOT NULL CHECK (status IN ('B1','NOT_IN_PROGRAM')),
   pin_hash TEXT,
   updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP

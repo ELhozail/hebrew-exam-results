@@ -20,8 +20,8 @@
     row.push(field);if(row.some(v=>v.trim()))rows.push(row);
     if(rows.length<2)throw Error('קובץ ה-CSV ריק או חסר שורות.');
     const headers=rows.shift().map(x=>x.trim().toLowerCase());
-    for(const key of ['student_id','student_name','grade','status'])if(!headers.includes(key))throw Error('חסרה עמודה: '+key);
-    return rows.map((cells,index)=>{const o={};headers.forEach((h,i)=>o[h]=(cells[i]||'').trim());o.student_id=o.student_id.replace(/\D/g,'').padStart(9,'0');if(!/^\d{9}$/.test(o.student_id))throw Error('מספר זהות שגוי בשורה '+(index+2));return o;});
+    for(const key of ['student_id','student_name','status','pin'])if(!headers.includes(key))throw Error('חסרה עמודה: '+key);
+    return rows.map((cells,index)=>{const o={};headers.forEach((h,i)=>o[h]=(cells[i]||'').trim());o.student_id=o.student_id.replace(/\D/g,'');if(o.student_id.length<9)o.student_id=o.student_id.padStart(9,'0');if(!/^\d{9,10}$/.test(o.student_id))throw Error('מספר זהות שגוי בשורה '+(index+2));return o;});
   }
   $('upload-form').addEventListener('submit',async(e)=>{
     e.preventDefault();
