@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#103b42">
+  <meta name="robots" content="noindex, nofollow">
+  <title>תוצאות המבחן – באקדמיזציה בתיכון בשפה העברית</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/config.js"></script>
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header" aria-label="כותרת האתר">
+      <div class="header-inner">
+        <div class="school-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none"><path d="m5 17 19-9 19 9-19 9L5 17Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M13 23v9c0 4 7 7 11 7s11-3 11-7v-9M42 18v13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="brand-text"><div class="brand-top">אקדמיזציה בתיכון</div><div class="brand-sub">בשפה העברית</div></div>
+        <div class="year-chip">תשפ״ז · 2026–2027</div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="hero-kicker"><span class="kicker-line"></span> מידע אישי לתלמידים <span class="kicker-line"></span></div>
+      <h1>תוצאות המבחן<span class="heading-dot">.</span></h1>
+      <p class="intro">באקדמיזציה בתיכון בשפה העברית</p>
+      <p class="subintro">לצפייה בתוצאות, יש להזין את מספר תעודת הזהות המלא.</p>
+
+      <section class="search-card" aria-labelledby="search-title">
+        <div class="card-topline"><span class="step-indicator">01</span><span id="search-title">איתור תוצאות אישיות</span></div>
+        <form id="result-form" autocomplete="off" novalidate>
+          <label for="student-id">מספר תעודת זהות</label>
+          <div class="input-wrap">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="3" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="11" r="2" stroke="currentColor" stroke-width="1.6"/><path d="M6 16c.5-2 5.5-2 6 0M15 10h4m-4 4h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <input id="student-id" name="studentId" type="text" inputmode="numeric" maxlength="9" pattern="[0-9]{9}" dir="ltr" placeholder="000000000" aria-describedby="id-help" required>
+          </div>
+          <p id="id-help" class="field-help">יש להזין 9 ספרות, כולל אפסים בתחילת המספר.</p>
+          <div id="pin-field" class="pin-field" hidden>
+            <label for="student-pin">קוד אישי</label>
+            <div class="input-wrap"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><rect x="5" y="10" width="14" height="11" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 10V7a4 4 0 1 1 8 0v3" stroke="currentColor" stroke-width="1.7"/></svg><input id="student-pin" name="pin" type="password" autocomplete="off" placeholder="הקוד שקיבלת מבית הספר" minlength="4" maxlength="64"></div>
+          </div>
+          <button id="submit-btn" class="primary-button" type="submit"><span>הצגת התוצאה</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </form>
+        <div id="alert" role="alert" aria-live="polite" class="alert" hidden></div>
+        <div class="demo-row" id="demo-row" hidden><span>תצוגת דוגמה ללא נתוני תלמידים</span><button id="demo-btn" type="button">הצגת דוגמה</button></div>
+      </section>
+
+      <section id="result" class="result-card" hidden aria-label="תוצאת התלמיד" aria-live="polite">
+        <div class="result-heading"><div><span class="eyebrow">תוצאה אישית</span><h2>פרטי התלמיד/ה</h2></div><span class="verified-icon" aria-hidden="true">✓</span></div>
+        <div id="demo-stamp" class="demo-stamp" hidden>הדגמה בלבד — לא תוצאה אמיתית</div>
+        <div class="detail-grid"><div class="detail"><span class="detail-label">שם התלמיד/ה</span><strong id="out-name"></strong></div><div class="detail"><span class="detail-label">מספר זהות</span><strong id="out-id" dir="ltr"></strong></div></div>
+        <div class="score-area"><div class="score-copy"><span class="detail-label">ציון במבחן</span><strong id="out-score"></strong><span class="score-footnote">מתוך 100</span></div><div class="status-block"><span class="detail-label">תוצאה</span><span id="out-status" class="status-pill"></span></div></div>
+        <p class="result-note">למידע נוסף ניתן לפנות לרכז/ת התכנית בבית הספר.</p>
+        <button class="reset-button" id="reset-btn" type="button">בדיקת מספר זהות אחר</button>
+      </section>
+
+      <div class="privacy-notice"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 4 7v5c0 5 3.1 8.4 8 10 4.9-1.6 8-5 8-10V7l-8-4Z" stroke="currentColor" stroke-width="1.7"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>התוצאות אישיות. אין לשתף פרטים מזהים או ציונים של תלמידים אחרים.</span></div>
+    </main>
+    <footer>אקדמיזציה בתיכון · בשפה העברית <span class="footer-divider">|</span> תשפ״ז</footer>
+  </div>
+</body>
+</html>
